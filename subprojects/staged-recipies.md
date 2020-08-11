@@ -1,0 +1,13 @@
+# Staged Recipies Roadmap
+
+[Staged-recipies](https://github.com/pangeo-forge/staged-recipes) is a GitHub repository that manages the submission of new pangeo-forge recipies. You can think of this as a holding area for new feedstocks.
+
+Staged-recipies is still a work-in-progress, but when complete, it will:
+
+- Include templates for new recipies.
+- Manage testing, linting, and executing new recipies.
+- Coordinate with pangeo-smithy to deploy new recipies into new GitHub repositories.
+
+## Repository Design
+
+TODO...
