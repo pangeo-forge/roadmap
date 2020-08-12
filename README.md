@@ -30,6 +30,7 @@ Read about the pangeo-smithy roadmap [here](./subprojects/pangeo-smithy.md).
 ### staged-recipies
 
 [Staged-recipies](https://github.com/pangeo-forge/staged-recipes) is a GitHub repository that manages the submission of new pangeo-forge recipies. You can think of this as a holding area for new feedstocks.
+Read about the staged-recipies roadmap [here](./subprojects/staged-recipies.md).
 
 ## Contributing
 
@@ -47,4 +48,4 @@ Here are a few ways you may consider getting involved:
 
 ------
 
-<p xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#" class="license-text">This work   is licensed under <a rel="license" href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" /></a>.</p>
+<p xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#" class="license-text">This work is licensed under <a rel="license" href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" /></a>.</p>
