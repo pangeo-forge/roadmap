@@ -24,7 +24,7 @@ Read about the pangeo-forge roadmap [here](./subprojects/pangeo-forge.md).
 ### pangeo-smithy
 
 [Pangeo-smithy](https://github.com/pangeo-forge/pangeo-smithy) is a tool for managing pangeo-forge feedstocks.
-It combines a pangeo-forge recipie with the Continuous Integration and Continuous Deployment (CI/CD) servcices.
+It combines a pangeo-forge recipes with the Continuous Integration and Continuous Deployment (CI/CD) servcices.
 Read about the pangeo-smithy roadmap [here](./subprojects/pangeo-smithy.md).
 
 ### staged-recipes
