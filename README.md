@@ -27,10 +27,10 @@ Read about the pangeo-forge roadmap [here](./subprojects/pangeo-forge.md).
 It combines a pangeo-forge recipie with the Continuous Integration and Continuous Deployment (CI/CD) servcices.
 Read about the pangeo-smithy roadmap [here](./subprojects/pangeo-smithy.md).
 
-### staged-recipies
+### staged-recipes
 
-[Staged-recipies](https://github.com/pangeo-forge/staged-recipes) is a GitHub repository that manages the submission of new pangeo-forge recipies. You can think of this as a holding area for new feedstocks.
-Read about the staged-recipies roadmap [here](./subprojects/staged-recipies.md).
+[Staged-recipes](https://github.com/pangeo-forge/staged-recipes) is a GitHub repository that manages the submission of new pangeo-forge recipes. You can think of this as a holding area for new feedstocks.
+Read about the staged-recipes roadmap [here](./subprojects/staged-recipes.md).
 
 ## Contributing
 
