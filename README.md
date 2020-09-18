@@ -18,13 +18,13 @@ Pangeo Forge brings together a number of smaller subprojects to enable automatic
 ### pangeo-forge
 
 [Pangeo-forge](https://github.com/pangeo-forge/pangeo-forge) provides a central workflow manager and API for the productions of cloud-optimized datasets.
-It is being desinged to include a high-level Pipeline API (built on top of [Prefect](https://www.prefect.io/)) that will be useful inside and outside of pangeo-forge infrastructure.
+It is being designed to include a high-level Pipeline API (built on top of [Prefect](https://www.prefect.io/)) that will be useful inside and outside of pangeo-forge infrastructure.
 Read about the pangeo-forge roadmap [here](./subprojects/pangeo-forge.md).
 
 ### pangeo-smithy
 
 [Pangeo-smithy](https://github.com/pangeo-forge/pangeo-smithy) is a tool for managing pangeo-forge feedstocks.
-It combines a pangeo-forge recipes with the Continuous Integration and Continuous Deployment (CI/CD) servcices.
+It combines a pangeo-forge recipes with the Continuous Integration and Continuous Deployment (CI/CD) services.
 Read about the pangeo-smithy roadmap [here](./subprojects/pangeo-smithy.md).
 
 ### staged-recipes
