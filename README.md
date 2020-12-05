@@ -1,3 +1,5 @@
+<p align="center"><img src="pangeo-forge-logo-blue.png" /></p>
+
 # Pangeo Forge public roadmap
 
 In this repository, you can find the the [Pangeo Forge project roadmap](https://github.com/pangeo-forge/roadmap/projects/2).
