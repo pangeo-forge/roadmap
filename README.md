@@ -2,7 +2,7 @@
 
 # Pangeo Forge public roadmap
 
-In this repository, you can find the the [Pangeo Forge project roadmap](https://github.com/pangeo-forge/roadmap/projects/2).
+In this repository, you can find the the Pangeo Forge project roadmap.
 The roadmap is where you can learn about Pangeo Forge project, its subprojects, how they fit together, and the road ahead.
 Pangeo Forge is just getting started so please open [issues](https://github.com/pangeo-forge/roadmap/issues) to ask questions or to propose changes and/or additions to the roadmap itself.
 Pangeo Forge has grown out of the [Pangeo Project](http://pangeo.io/), an open-source community promoting open, reproducible, and scalable science. 
