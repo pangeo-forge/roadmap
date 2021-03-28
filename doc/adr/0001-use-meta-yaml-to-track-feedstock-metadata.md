@@ -1,41 +1,50 @@
-# Pangeo Forge `meta.yaml` Draft Specification
+# 1. Use meta.yaml to track feedstock metadata
 
-The `meta.yaml` file lives in a pangeo forge recipe feedstock repo.
-Here we document the format and contents of this file.
+Date: 2021-03-27
 
-## Goals
+## Status
 
-- The `meta.yaml` file should describe everything we need to know about the recipes that is not contained in the recipe python code itself.
+Proposed
+
+## Context
+
+We need a way to keep track of metadata associated with each feedstock repo.
+
+### Goals
+
+- The metadata should describe everything we need to know about the recipes that is not contained in the recipe python code itself.
 - It should facilitate generation of a STAC collection for the data that comes out of the recipe.
 - It should tell the bakery everything it needs to know to run the recipe.
 
+### Inspiration
 
-## Inspiration
-
-- Conda forge [meta.yaml](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html). 
+- Conda forge [meta.yaml](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html).
 - [STAC collection example](https://github.com/radiantearth/stac-spec/blob/master/examples/collection.json)
 
-## Top Level Data
+
+## Decision
+
+We will track metadata in a `meta.yaml` which lives at the top level of a feedstock repo.
+The format and contents of this file are specified as follows.
+
+### Top Level Data
 
 ```yaml
+id: noaa-oisst  # top-level ID for the feedstock. must match feedstock repo name
 title: "NOAA Optimum Interpolated SST"
 description: "Analysis-ready Zarr datasets derived from NOAA OISST NetCDF"
-pangeo_forge_version: "0.0.1"  # do we need a separate spec version
+pangeo_forge_recipe_version: "0.1"
+pangeo_forge_metadata_spec_version: "1"
 ```
 
-### Questions
-- Is this enough? What else might we want to include?
-- I'm thinking we don't need a top-level `ID` attribute. That will be determined automatically based on the repo name.
-- Spec version as well?
-
-## `recipes` section
+### `recipes` section
 
 
 The `recipes` section explains what recipes are contained in the repo. For the simple case of one recipe, it looks like this
 
 ```yaml
 recipes:
-  - id: noaa-oisst-avhrr-only
+  - id: avhrr-only
     module: recipe.py  # the module where to find the recipe
     name: recipe  # the name of the object to import
 ```
@@ -49,10 +58,10 @@ If the repo provides multiple recipes in the same module, it might look like thi
 
 ```yaml
 recipes:
-  - id: noaa-oisst-avhrr-only
+  - id: avhrr-only
     module: recipe.py
     name: recipe_avhrr_only
-  - id: noaa-oisst-amsr-avhrr
+  - id: amsr-avhrr
     module: recipe.py  
     name: recipe_amsr_avhrr
 ```
@@ -64,15 +73,11 @@ Rules for this section:
 2. `id` must use restricted character set compatible with S3
 3. `name` must be a valid python identifier
 
-### Questions
-
-- Is `id` redundant? Could it be generated based on the recipe module name?
-
-## `provenance` section
+### `provenance` section
 
 The provenance section describes _where the data came from_.
 
-### `providers` section
+#### `providers` section
 
 This section mirrors the [STAC providers object](https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md#provider-object).
 
@@ -84,11 +89,12 @@ provenance:
       roles:
         - producer
         - licensor
-      url: https://www.ncdc.noaa.gov/oisst
-      
+      url: https://www.ncdc.noaa.gov/oisst    
 ```
 
-### `license` section
+The bakeries will add additional provenance (e.g. "processor") when they generate data.
+
+#### `license` section
 
 This section mirrors the [STAC license section](https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md#license):
 
@@ -113,7 +119,7 @@ provenance:
 
 Presumably other entries will be added to this before it becomes a STAC catalog (`processor`, `host`, etc.).
 
-## `maintainers` section
+### `maintainers` section
 
 Who created the recipe. A list with a least one entry.
 
@@ -124,10 +130,9 @@ maintainers:
     github: rabernat
 ```
 
-### Questions
-- What is required? Only github I think.
+Only `github` is required.
 
-## `bakeries` section
+### `bakeries` section
 
 Tells how to bake the recipe.
 
@@ -140,15 +145,14 @@ bakeries:
       memory: "10 GB"  # this is optional, should have a default of 4GB
 ```
 
-### Questions
-- If a bakery has multiple possible targets, how do we specify this?
+## Consequences
 
+This format specification will be used by several different parts of the system.
 
-## Suggestions
-
-These came up at today's meeting
-
-- extras section?
-- json schema
-- or [yamale](https://github.com/23andMe/Yamale)? https://github.com/nrkno/yaml-schema-validator-github-action
-- Dependencies?
+- Users writing new recipes will need to write their `meta.yaml`, ideally starting
+  from a nice template or example. More documentation is needed.
+- The feedstock github actions will need to parse `meta.yaml` in order to dispatch
+  recipes to bakeries. Some of the metadata may need to be injected directly into
+  the dataset `attrs`.
+- The catalog database will need to parse `meta.yaml` in order to fill in catalog
+  metadata for the recipes added by the feedstock.
