@@ -78,9 +78,11 @@ Staged-recipes is a GitHub repository that manages the submission of new Pangeo 
 You can think of this as a holding area for new feedstocks.
 This repo contains the automation components of Pangeo Forge.
 
-### bakery
+### Bakeries
 
-Coming sooon...
+Bakery deployments are being developed for specific cloud providers.
+
+- <https://github.com/pangeo-forge/pangeo-forge-aws-bakery>
 
 ### Pangeo Forge Website
 
@@ -88,6 +90,18 @@ Coming sooon...
 
 Once the system is operating, the data library catalog will be viewable on this vue.js website.
 However, we aren't quite ready for this front-end work yet.
+
+## Milestones
+
+Here we outline some rough milestones we hope to meet.
+
+| Date | Features | KPIs | 
+|------|----------|------|
+| May 1, 2021 | Launch cloud automation | - | 
+| Nov 1, 2021 | Launch catalog website | Functional recipes from partners GHRSST & iHESP; 20 active users |
+| May 1, 2022 | Launch JupyterHub / Binder integration | Functional recipes from partners ECMWF (ERA5) and ESGF (CMIP6); 20 user-contributed recipes; 100 active users |
+| May 1, 2023 | - | 100 user-contributed recipes; 500 active users |
+
 
 ## Contributing
 
