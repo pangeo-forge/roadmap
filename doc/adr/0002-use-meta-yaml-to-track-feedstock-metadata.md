@@ -45,8 +45,7 @@ The `recipes` section explains what recipes are contained in the repo. For the s
 ```yaml
 recipes:
   - id: avhrr-only
-    module: recipe.py  # the module where to find the recipe
-    name: recipe  # the name of the object to import
+    object: "recipe:recipe" 
 ```
 
 To find the code for this recipe, the parsing library would have to do something link
@@ -59,11 +58,9 @@ If the repo provides multiple recipes in the same module, it might look like thi
 ```yaml
 recipes:
   - id: avhrr-only
-    module: recipe.py
-    name: recipe_avhrr_only
-  - id: amsr-avhrr
-    module: recipe.py  
-    name: recipe_amsr_avhrr
+    object: "recipe:avhrr_only"
+  - id: amsr-avhrr  
+    object: "recipe:amsr_avhrr"
 ```
 
 (We could also have multiple distinct modules.)
@@ -71,7 +68,8 @@ recipes:
 Rules for this section:
 1. `id` must be unique
 2. `id` must use restricted character set compatible with S3
-3. `name` must be a valid python identifier
+3. `object` uses entrypoints syntax to specify a module and object name to import
+   The object must be an instance of a [Recipe object](https://pangeo-forge.readthedocs.io/en/latest/recipes.html#the-recipe-object).
 
 ### `provenance` section
 
