@@ -4,7 +4,7 @@ Date: 2021-03-29
 
 ## Status
 
-Draft
+Accepted
 
 ## Context
 
@@ -21,9 +21,10 @@ That file will look like this
 
 ```yaml
 ---
-aws_us_west2:
+ldeo_aws_us_west2:
   description: >
-    Main bakery used for development and testing of Pangeo Forge
+    Main bakery used for development and testing of Pangeo Forge.
+    This bakery is operated by Lamont Doherty Earth Observatory of Columbia University.
   region: aws-us-west2
   admins:
     - name: "Ryan Abernathey"
@@ -37,8 +38,8 @@ aws_us_west2:
         protocol: s3
         prefix: /pangeo_forge_aws_us_west2/
         storage_options:
-          key: {AWS_KEY_ENV_VAR}
-          secret: {AWS_SECRET_ENV_VAR}
+          key: {AWS_ACCESS_KEY_ID}
+          secret: {AWS_SECRET_ACCESS_KEY}
       public:
         protocol: s3
         prefix: /pangeo_forge_aws_us_west2/
@@ -66,17 +67,27 @@ Each target should have both a **private** and **public** entry.
 The private one is used by the Bakery to store the data.
 The public one is used to generate catalog entries for directly opening the data.
 
+### Bakery Name
+
+The bakery name should uniquely identify the bakery by its operator and region.
+Use only lowercase letters, numbers, and underscores.
+
+### Admins
+
+This section should use the same synatx to describe people as the recipe `meta.yaml`.
 
 ### Storage Options
 
 The `storage_options` should look exactly like an [intake catalog](https://intake.readthedocs.io/en/latest/catalog.html#remote-access).
 That's how we encode how to open up the store.
 
+### Secrets
 
-### Open Questions
-- How do we deal with the secrets? I am assuming they will be populated from an environment variable, and here we are giving the name of the environment variable.
-- I am using an ad-hoc definition of `region`. Is there a way to standardize this?
-- What is required / optional, etc.
+Secrets will be populated from environment variables. The names of the environment variables should follow the standards for each cloud provider.
+
+### Region Definition
+
+We are using an ad-hoc definition of `region` with the syntax `{cloud_provider}-{region_name}`. 
 
 ## Consequences
 
