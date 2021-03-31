@@ -21,7 +21,7 @@ That file will look like this
 
 ```yaml
 ---
-ldeo_aws_us_west2:
+edu.columbia.ldeo.bakery.aws.us-west2:
   description: >
     Main bakery used for development and testing of Pangeo Forge.
     This bakery is operated by Lamont Doherty Earth Observatory of Columbia University.
@@ -32,7 +32,7 @@ ldeo_aws_us_west2:
       github: rabernat
   targets:
     pangeo_forge_aws_us_west2:
-      region: aws-us-west2
+      region: aws.us-west2
       description: "S3 Bucket For General Use"
       private:
         protocol: s3
@@ -46,7 +46,7 @@ ldeo_aws_us_west2:
         storage_options:
           requester_pays: True
     osn_ncsa:
-      region: ncsa
+      region: osn.ncsa
       description: >
         Pangeo Open Storage Network Bucket at National Center for
         Supercomputing Applications
@@ -69,8 +69,8 @@ The public one is used to generate catalog entries for directly opening the data
 
 ### Bakery Name
 
-The bakery name should uniquely identify the bakery by its operator and region.
-Use only lowercase letters, numbers, and underscores.
+The bakery name should follow java package syntax to ensure unique bakery names. After the organization name
+should come `.bakery.{cloud}.{region}`.
 
 ### Admins
 
@@ -87,7 +87,7 @@ Secrets will be populated from environment variables. The names of the environme
 
 ### Region Definition
 
-We are using an ad-hoc definition of `region` with the syntax `{cloud_provider}-{region_name}`. 
+We are using an ad-hoc definition of `region` with the syntax `{cloud_provider}.{region_name}`. 
 
 ## Consequences
 
