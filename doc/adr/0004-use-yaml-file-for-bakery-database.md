@@ -25,11 +25,13 @@ edu.columbia.ldeo.bakery.aws.us-west2:
   description: >
     Main bakery used for development and testing of Pangeo Forge.
     This bakery is operated by Lamont Doherty Earth Observatory of Columbia University.
-  region: aws-us-west2
+  org_website: "http://ldeo.columbia.edu"
+  region: aws.us-west2
   admins:
     - name: "Ryan Abernathey"
       orcid: "0000-0001-5999-4917"
       github: rabernat
+      email: "rpa@ldeo.columbia.edu"
   targets:
     pangeo_forge_aws_us_west2:
       region: aws.us-west2
