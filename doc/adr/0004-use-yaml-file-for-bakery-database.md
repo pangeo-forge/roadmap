@@ -74,7 +74,7 @@ Use only lowercase letters, numbers, and underscores.
 
 ### Admins
 
-This section should use the same synatx to describe people as the recipe `meta.yaml`.
+This section should use the same syntax to describe people as the recipe `meta.yaml`.
 
 ### Storage Options
 
