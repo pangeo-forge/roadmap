@@ -39,8 +39,10 @@ pangeo_forge_metadata_spec_version: "1"
 
 ### `recipes` section
 
-
-The `recipes` section explains what recipes are contained in the repo. For the simple case of one recipe, it looks like this
+The `recipes` section explains what recipes are contained in the repo. 
+The recipes are defined in python code in a `.py` file (python module).
+We need a way to point to python objects in from meta.yaml.
+For the simple case of one recipe, it looks like this:
 
 ```yaml
 recipes:
@@ -65,11 +67,23 @@ recipes:
 
 (We could also have multiple distinct modules.)
 
+Some feedstocks may want to provide many recipes in one `.py` file.
+In this case, it is not feasible to enumerate every one explicitly in meta.yaml.
+Instead, we can point at a python dict directly using `dict-object`.
+The keys of the dict will become the recipe ids, and the values the recipe objects.
+For example:
+
+```yaml
+recipes:
+  - dict-object: "recipe:all_recipes
+```
+
 Rules for this section:
 1. `id` must be unique
 2. `id` must use restricted character set compatible with S3
 3. `object` uses entrypoints syntax to specify a module and object name to import
    The object must be an instance of a [Recipe object](https://pangeo-forge.readthedocs.io/en/latest/recipes.html#the-recipe-object).
+4. Each entry in the `recipes` section must have *either* `id` and `object` *or*  `dict-object`.
 
 ### `provenance` section
 
