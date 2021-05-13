@@ -33,7 +33,7 @@ The format and contents of this file are specified as follows.
 id: noaa-oisst  # top-level ID for the feedstock. must match feedstock repo name
 title: "NOAA Optimum Interpolated SST"
 description: "Analysis-ready Zarr datasets derived from NOAA OISST NetCDF"
-pangeo_forge_recipe_version: "0.1"
+pangeo_forge_recipes_version: "0.1"
 pangeo_forge_metadata_spec_version: "1"
 ```
 
