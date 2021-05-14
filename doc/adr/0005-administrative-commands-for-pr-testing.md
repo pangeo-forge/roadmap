@@ -22,4 +22,4 @@ There are a few outstanding points here. There has been some [discussion](https:
 
 ## Consequences
 
-This will require adminstrator intervention in the PR review process will also add complexity for recipe authors who will need to incorporate reduced testing dimensions into their recipes.
+This will require `pangeo-forge` administrator and bakery operator intervention in the PR review process, it will also add complexity for recipe authors who will need to incorporate reduced testing dimensions into their recipes.
