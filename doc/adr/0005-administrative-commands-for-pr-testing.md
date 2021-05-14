@@ -11,7 +11,7 @@ Pangeo Forge is inspired by [Conda Forge](https://conda-forge.org/).  Conda Forg
 
 To alleviate this limitation we will include some administrator intervention in the PR review process by using [slash command dispatch](https://github.com/peter-evans/slash-command-dispatch) to allow administrators to comment on a PR in order to register and run a reduced dimension version of the recipe with the development bakery.  So the current workflow will be 
 
-1. Recipe author forks `staged-recipes` and develops a new recipe with a `meta.yaml` entypoint.
+1. Recipe author forks `staged-recipes` and develops a new recipe with a `meta.yaml` entrypoint.
 2. Recipe author submits a PR from their fork to `staged-recipes`.
 3. This PR event triggers a workflow with initial linting and code validation that does not require secrets.
 4. A `pangeo-forge` admin adds a comment command to register and run the reduced dimension version of the recipe on the development bakery.
