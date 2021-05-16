@@ -69,13 +69,13 @@ recipes:
 
 Some feedstocks may want to provide many recipes in one `.py` file.
 In this case, it is not feasible to enumerate every one explicitly in meta.yaml.
-Instead, we can point at a python dict directly using `dict-object`.
+Instead, we can point at a python dict directly using `dict_object`.
 The keys of the dict will become the recipe ids, and the values the recipe objects.
 For example:
 
 ```yaml
 recipes:
-  - dict-object: "recipe:all_recipes
+  - dict_object: "recipe:all_recipes
 ```
 
 Rules for this section:
@@ -83,7 +83,7 @@ Rules for this section:
 2. `id` must use restricted character set compatible with S3
 3. `object` uses entrypoints syntax to specify a module and object name to import
    The object must be an instance of a [Recipe object](https://pangeo-forge.readthedocs.io/en/latest/recipes.html#the-recipe-object).
-4. Each entry in the `recipes` section must have *either* `id` and `object` *or*  `dict-object`.
+4. Each entry in the `recipes` section must have *either* `id` and `object` *or*  `dict_object`.
 
 ### `provenance` section
 
