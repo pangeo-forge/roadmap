@@ -17,7 +17,7 @@ By automating the difficult parts of package creation, Conda Forge has enabled t
 ## Vision
 
 Pangeo Forge aspires to be like Conda Forge, but for data--specifically, Analysis Ready, Cloud Optimized (ARCO) data.
-(For a detailed working definiton of ARCO data, see our preprint [Cloud Native Repositories for Big Scientific Data](https://www.authorea.com/doi/full/10.22541/au.160443768.88917719/v2).)
+(For a detailed working definiton of ARCO data, see our paper [Cloud Native Repositories for Big Scientific Data](https://ieeexplore.ieee.org/abstract/document/9354557).)
 We envision a vibrant, dynamic library of open-access ARCO data stored in public clouds, shared among thousands of scientists and directly accessible to data-proximate computing.
 However, manually populating such a library would be prohibitively difficult and tedious.
 Instead, we are building Pangeo Forge to automate the production of ARCO data and enable the croudsourcing of such a data library.
