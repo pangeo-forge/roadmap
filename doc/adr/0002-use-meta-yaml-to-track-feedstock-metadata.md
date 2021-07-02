@@ -24,13 +24,14 @@ We need a way to keep track of metadata associated with each feedstock repo.
 
 ## Decision
 
-We will track metadata in a `meta.yaml` which lives at the top level of a feedstock repo.
+We will track metadata in a `meta.yaml` which lives at the top level of the the `feedstock/` directory within the generated feedstock repo.
+
 The format and contents of this file are specified as follows.
 
 ### Top Level Data
 
 ```yaml
-id: noaa-oisst  # top-level ID for the feedstock. must match feedstock repo name
+id: noaa-oisst  # top-level ID for the feedstock. must be unique and must match feedstock repo name
 title: "NOAA Optimum Interpolated SST"
 description: "Analysis-ready Zarr datasets derived from NOAA OISST NetCDF"
 pangeo_forge_recipes_version: "0.1"
@@ -39,7 +40,7 @@ pangeo_forge_metadata_spec_version: "1"
 
 ### `recipes` section
 
-The `recipes` section explains what recipes are contained in the repo. 
+The `recipes` section explains what recipes are contained in the repo.
 The recipes are defined in python code in a `.py` file (python module).
 We need a way to point to python objects in from meta.yaml.
 For the simple case of one recipe, it looks like this:
@@ -47,7 +48,7 @@ For the simple case of one recipe, it looks like this:
 ```yaml
 recipes:
   - id: avhrr-only
-    object: "recipe:recipe" 
+    object: "recipe:recipe"
 ```
 
 To find the code for this recipe, the parsing library would have to do something link
@@ -61,7 +62,7 @@ If the repo provides multiple recipes in the same module, it might look like thi
 recipes:
   - id: avhrr-only
     object: "recipe:avhrr_only"
-  - id: amsr-avhrr  
+  - id: amsr-avhrr
     object: "recipe:amsr_avhrr"
 ```
 
@@ -101,7 +102,7 @@ provenance:
       roles:
         - producer
         - licensor
-      url: https://www.ncdc.noaa.gov/oisst    
+      url: https://www.ncdc.noaa.gov/oisst
 ```
 
 The bakeries will add additional provenance (e.g. "processor") when they generate data.
@@ -156,6 +157,39 @@ bakeries:
     resources:  # mapped to worker settings somehow
       memory: "10 GB"  # this is optional, should have a default of 4GB
 ```
+
+### Recipe related files
+
+The files used by the Recipes outlined in the `meta.yaml` file must be adjacent or in subdirectories adjacent to the `meta.yaml` file when the PR to `staged-recipes` is raised.
+
+For example, both of the examples below are **valid** structures that we expect:
+
+**Directly Adjacent**
+```
+a
+└── pr
+    └── contents
+        └── pr-feedstock
+            ├── meta.yaml # metadata file is directly adjacent to the recipe related files
+            ├── recipe.py
+            ├── recipe_2.py
+            └── sidecar_file.txt
+```
+
+**Adjacent Subdirectories**
+```
+a
+└── pr
+    └── contents
+        ├── meta.yaml # metadata file is adjacent to subdirectories container recipe related files
+        ├── recipe_1
+        │   ├── recipe.py
+        │   └── utils
+        │       └── utils.py
+        └── recipe_2.py
+```
+
+The `feedstock-creation-action` will use the parent directory of `meta.yaml` to copy all Recipe related files into the generated Feedstock repository.
 
 ## Consequences
 
