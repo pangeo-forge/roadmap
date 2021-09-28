@@ -53,6 +53,14 @@ Updates to the minor version number are considered minor changes;
 when a new minor version is released, bakeries will _overwrite the previous minor version_ of the feedstock's datasets.
 Instead, the bakery should _always retain the latest major version_.
 Updates that involve concatenation of new elements (e.g. extend the temporal range) are considered minor version updates.
+Changes are _minor_ if they will be backwards-compatible with user code which relies on the previous version of the dataset. Changes are _major_ if they have the potential to break existing user code. The following table provides examples for each category:
+
+| Change | Minor | Major |
+| -------- | ----- | ------ |
+| Updating metadata (e.g. to correct units, descriptions, etc.) | :ballot_box_with_check:  |  |
+| Adding new variables or timesteps | :ballot_box_with_check: |  |
+| Changing existing variable names | | :ballot_box_with_check: |
+| Changing preprocessing functions (that alter existing data) | | :ballot_box_with_check: |
 
 ### `recipes` section
 
