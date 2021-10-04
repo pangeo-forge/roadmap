@@ -31,12 +31,36 @@ The format and contents of this file are specified as follows.
 ### Top Level Data
 
 ```yaml
-id: noaa-oisst  # top-level ID for the feedstock. must be unique and must match feedstock repo name
+id: noaa-oisst
+version: "1.0" 
 title: "NOAA Optimum Interpolated SST"
 description: "Analysis-ready Zarr datasets derived from NOAA OISST NetCDF"
 pangeo_forge_recipes_version: "0.1"
-pangeo_forge_metadata_spec_version: "1"
+pangeo_forge_metadata_spec_version: "2"
 ```
+
+| name | description | valid characters |
+| -- | -- | -- |
+| id | top-level ID for the feedstock. must be unique and must match feedstock repo name | lower case ascii alpha-numeric, no spaces, only dashes allowed |
+| version | feedstock version | `{MAJOR}.{̨MINOR}` |
+| description | - | Unicode |
+
+#### Version
+
+We use a two-element version of semantic versioning: `MAJOR.MINOR`.
+The recipe version starts at 1.0.
+Updates to the minor version number are considered minor changes;
+when a new minor version is released, bakeries will _overwrite the previous minor version_ of the feedstock's datasets.
+Instead, the bakery should _always retain the latest major version_.
+Updates that involve concatenation of new elements (e.g. extend the temporal range) are considered minor version updates.
+Changes are _minor_ if they will be backwards-compatible with user code which relies on the previous version of the dataset. Changes are _major_ if they have the potential to break existing user code. The following table provides examples for each category:
+
+| Change | Minor | Major |
+| -------- | ----- | ------ |
+| Updating metadata (e.g. to correct units, descriptions, etc.) | :ballot_box_with_check:  |  |
+| Adding new variables or timesteps | :ballot_box_with_check: |  |
+| Changing existing variable names | | :ballot_box_with_check: |
+| Changing preprocessing functions (that alter existing data) | | :ballot_box_with_check: |
 
 ### `recipes` section
 
