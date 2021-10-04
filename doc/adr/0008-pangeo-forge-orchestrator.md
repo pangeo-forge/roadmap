@@ -57,4 +57,18 @@ Examples of submodules and associated functions include:
 
 ## Consequences
 
-What becomes easier or more difficult to do because of this change?
+Following approximately the contribution steps outlined in [flow-charts/ci-flow-with-callstack.png](https://raw.githubusercontent.com/pangeo-forge/flow-charts/main/renders/ci-flow-with-callstack.png), the following code would be added to, refactored as a result of, and/or subsumed by `pangeo-forge-orchestrator`:
+
+| Step | Implementation |
+| ---- | -------------- |
+| Local recipe execution (from CLI, w/out Jupyter) | _New_ |
+| Lint recipe PRs | _New_ |
+| Interactive feedback based on lint | _New_ |
+| Dispatch recipe test | _Refactor_: https://github.com/pangeo-forge/staged-recipes/blob/master/.github/workflows/run-recipe-test.yaml |
+| Setup recipe test | _Subsumes_: https://github.com/pangeo-forge/recipe-prefect-action |
+| Run Prefect Flow (test or full) | _Subsumes_: https://github.com/pangeo-forge/pangeo-forge-prefect |
+| Interactive feedback on recipe test | _New_ |
+| Dispatch feedstock creation | _Refactor_: https://github.com/pangeo-forge/staged-recipes/blob/master/.github/workflows/create-feedstock.yaml |
+| Create feedstock repo | _Subsumes_: https://github.com/pangeo-forge/feedstock-creation-action |
+| Run full recipe | _Refactor_: https://github.com/pangeo-forge/feedstock-template/blob/main/.github/workflows/run-recipe.yaml |
+| Generate STAC Item | _New_ |
