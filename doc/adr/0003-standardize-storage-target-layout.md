@@ -39,7 +39,7 @@ The Path is the string used to point to a dataset.
 A Path string has the following structure
 
 ```
-{prefix}/pangeo-forge/{feedstock_name}/{recipe_name}.{dataset_type}
+{prefix}/pangeo-forge/{feedstock_name}/v{major_version}/{recipe_id}.{dataset_type}
 ```
 
 This template contains four keys:
@@ -49,14 +49,15 @@ This template contains four keys:
   For now I am assuming no.
 - `feedstock_name`: the name of the repository that holds the feedstock with
   the recipe that generated the dataset.
-- `recipe_name`: the name of the recipe. This maps directly to a value defined in
+- `major_version`: the major version of the feedstock
+- `recipe_id`: the ID of the recipe. This maps directly to a value defined in
   the `meta.yaml` file (see ADR 1).
 - `dataset_type`: a suffix like `zarr`, `parquet`, etc.
 
 
 Example:
 ```
-/pangeo-us-west-2/pangeo-forge/noaa_oisst/avhrr_only.zarr
+/pangeo-us-west-2/pangeo-forge/noaa_oisst/v1/avhrr_only.zarr
 ```
 
 `prefix` can be any valid characters for the object store. We assume that
