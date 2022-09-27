@@ -100,7 +100,7 @@ For example:
 
 ```yaml
 recipes:
-  - dict_object: "recipe:all_recipes
+  dict_object: "recipe:all_recipes"
 ```
 
 Rules for this section:
