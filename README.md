@@ -113,7 +113,7 @@ Overall progress on the project can be tracked via two project boards:
 
 At this stage, there are a few ways you may consider getting involved.
 
-1. Scientists and data managers can [document an example recipie](https://github.com/pangeo-forge/staged-recipes/issues/new?assignees=&labels=example&template=example-pipeline.md&title=Example+pipeline+for+%5BDataset+Name%5D). Gathering use cases very helpful for defining the technical needs of pangeo-forge. You don't have to write any code to do this; you just have to understand the dataset you want to work with.
+1. Scientists and data managers can [document an example recipe](https://github.com/pangeo-forge/staged-recipes/issues/new?assignees=&labels=example&template=example-pipeline.md&title=Example+pipeline+for+%5BDataset+Name%5D). Gathering use cases very helpful for defining the technical needs of pangeo-forge. You don't have to write any code to do this; you just have to understand the dataset you want to work with.
 2. Python software developers can contribute to the code base. The [software development project board](https://github.com/orgs/pangeo-forge/projects/1) is a great place to start.
 3. Anyone can comment on the project road map in this repository.
 4. Eventually (but not yet), organizations can provide support for operating the bakeries (or run their own).
