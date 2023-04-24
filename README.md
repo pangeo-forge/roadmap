@@ -58,7 +58,7 @@ We hope that eventually there will be Pangeo Forge bakeries running in most regi
 Pangeo Forge brings together a number of smaller subprojects to implement this vision.
 The currently-active subprojects are
 
-### pangeo-forge
+### 01 - `pangeo-forge-recipes`
 
 <https://github.com/pangeo-forge/pangeo-forge>
 
@@ -70,21 +70,27 @@ The currently-active subprojects are
 The `pangeo_forge` python package provides the core API for creating Recipes.
 All of the "business logic" for how to extract, transform, and load data lives in this library; as such, it is the focal point of Pangeo Forge development.
 
-### staged-recipes
 
-<https://github.com/pangeo-forge/staged-recipes>
+### 02 - `meta-yaml-spec`
 
-Staged-recipes is a GitHub repository that manages the submission of new Pangeo Forge recipes.
-You can think of this as a holding area for new feedstocks.
-This repo contains the automation components of Pangeo Forge.
 
-### Bakeries
+
+### 03 - `pangeo-forge-runner`
+
+
+
+### 04 - Github Action
 
 Bakery deployments are being developed for specific cloud providers.
 
 - <https://github.com/pangeo-forge/pangeo-forge-aws-bakery>
 
-### Pangeo Forge Website
+
+### 05 - Github App
+
+
+
+### 06 - Pangeo Forge Website
 
 <https://github.com/pangeo-forge/pangeo-forge-vue-website>
 
