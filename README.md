@@ -1,25 +1,23 @@
 <p align="center"><img src="pangeo-forge-logo-blue.png" /></p>
 
-# Pangeo Forge public roadmap
+# Pangeo Forge Public Roadmap
 
 🆕 Updated May 2024 🆕 
 
-In this repository, you can find the the Pangeo Forge project roadmap.
-The roadmap is where you can learn about Pangeo Forge project, its subprojects, how they fit together, and the road ahead.
+In this repository, you can find a high level overview of the Pangeo Forge project, its subprojects, how they fit together, and the road ahead.
 Pangeo Forge is a community driven project so please open [issues](https://github.com/pangeo-forge/roadmap/issues) to ask questions or to propose changes and/or additions to the roadmap itself.
 Pangeo Forge has grown out of the [Pangeo Project](http://pangeo.io/), an open-source community promoting open, reproducible, and scalable science. 
 
 ## Inspiration
 
-Pangeo Forge is inspired to copy the very successful pattern of [Conda Forge](https://conda-forge.org/).
+Pangeo Forge is inspired by the very successful pattern of [Conda Forge](https://conda-forge.org/).
 Conda Forge makes it easy for anyone to create a [conda package](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/packages.html), a binary software package that can be installed with the conda package manager.
 In Conda Forge, a maintainer contributes [a recipe](https://conda-forge.org/#add_recipe) which is used to generate a conda package from a source code tarball. Behind the scenes, CI downloads the source code, builds the package, and uploads it to a repository.
 By automating the difficult parts of package creation, Conda Forge has enabled the open-source community to collaboratively maintain a huge and dynamic library of software packages.
 
 ## Vision
 
-Pangeo Forge aspires to be like Conda Forge, but for data — specifically, for Analysis Ready, Cloud Optimized (ARCO) data.
-(For a detailed working definiton of ARCO data, see our paper [Cloud Native Repositories for Big Scientific Data](https://ieeexplore.ieee.org/abstract/document/9354557).)
+Pangeo Forge aspires to be like Conda Forge, but for data — specifically, for Analysis Ready, Cloud Optimized (ARCO) data. For a detailed working definiton of ARCO data, see our paper [Cloud Native Repositories for Big Scientific Data](https://ieeexplore.ieee.org/abstract/document/9354557).
 
 We envision a vibrant, dynamic library of open-access ARCO data stored in public clouds, shared among thousands of scientists and directly accessible to data-proximate computing.
 
@@ -46,7 +44,7 @@ Execution environments (aka "bakeries") are automated systems for executing thes
 
 We hope that eventually there will be one or more Pangeo Forge bakeries for all major cloud providers.
 
-There are a number of execution environments in development at time of writing. Reach out to the current pangeo forge development team in pangeo forge coordination calls for the latest details.
+There are a number of execution environments in development at time of writing. Reach out to the current Pangeo Forge development team (via community meetings, see the Governance section) for the latest details.
 
 - A pyspark runner: https://github.com/moradology/beam-pyspark-runner) with AWS EMR deployment in-progress.
 - A flink runner: https://github.com/NASA-IMPACT/veda-pforge-job-runner
@@ -56,21 +54,38 @@ There are a number of execution environments in development at time of writing. 
 
 <https://github.com/pangeo-forge/pangeo-forge-vue-website>
 
-## Roadmap
-
-Given the various owners in Pangeo Forge at this time, the roadmap will be documented in an issue to allow for revision and commenting.
-
 ## Governance
 
-Pangeo-forge is a community-driven project with lots of work to do and lots of room for contributors to engage. Please join one of our community meetings which are included on the calendar of the [Pangeo Meeting Schedule and Notes page](https://pangeo.io/meeting-notes.html)
+Pangeo Forge is a community-driven project with lots of work to do and lots of room for contributors to engage. Please join one of our community meetings which are included on the calendar of the [Pangeo Meeting Schedule and Notes page](https://pangeo.io/meeting-notes.html)
 
-* Open pangeo-forge coordination meetings will be held every 2 weeks. The agenda will be flexible to the needs of current pangeo-forge developers to address open and context-heavy questions as a group. This is a meeting for pangeo-forge developers to focus on getting pangeo-forge-recipes and the runner to a new stable release.
-* Open pangeo-forge jam sessions will be held once a week. This agenda will focus on troubleshooting or knowledge sharing of pangeo-forge developers on active development tasks.
+* Open Pangeo Forge coordination meetings will be held every 2 weeks. The agenda will be flexible to the needs of current Pangeo Forge developers to address open and context-heavy questions as a group. This is a meeting for Pangeo Forge developers to focus on getting pangeo-forge-recipes and the runner to a new stable release.
+* Open Pangeo Forge jam sessions will be held once a week. This agenda will focus on troubleshooting or knowledge sharing of Pangeo Forgee developers on active development tasks.
 * Community recipe development: Previously, all recipes were submitted to staged-recipes. Soon we will have a new method for developing and contributing recipes:
     * There will be a template (Github repository template or cookiecutter) for users to get started with a skeleton recipe. Users are encouraged to create a recipe in their own organization. Once the recipe has been developed and tested, users can optionally request to transfer the recipe repo to the official pangeo-forge organization.
     * Questions about recipes and datasets could be asked on those individual repositories.
 * Github discussions in pangeo-forge should be used for higher level issues.
 
+## Roadmap May 2024 - October 2024
+
+### Recipes
+
+* We expect to test and document the following functionality:
+    * parquet kerchunk reference generation and append (MUR SST)
+    * OpenWithXarray supports Zarr
+ * Methods for validating zarr stores and chunk manifests will be developed or recommended.
+
+### Execution environments
+
+* Pressure test and release the pyspark beam runner through testing existing and new recipes, such as MUR SST kerchunk, CMIP6 and GPM IMERG. Documentation will provide instructions on how to deploy and use the pyspark beam runner.
+* A pyspark beam runner will be cloud agnostic but we anticipate maintaining a stable deployment on one cloud provider in the short term.
+
+### Documention + Governance
+
+* [Documentation](https://pangeo-forge.readthedocs.io) will be updated to reflect changes, such as the migration from per-recipe feedstocks for deployment on a single centralized runner (formerly known as a bakery) to decentralized recipe actions and execution environments.
+* Move recipes out of staged-recipes or forked repos into their own repos
+* Archive feedstocks in the pangeo-forge organization
+* Create a template for recipe development
+* Migrate pangeo-forge jam sessions to a shared calendar
 
 ------
 
