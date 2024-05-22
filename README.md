@@ -4,7 +4,7 @@
 
 🆕 Updated May 2024 🆕 
 
-In this repository, you can find a high level overview of the Pangeo Forge project, its subprojects, how they fit together, and the road ahead.
+In this repository, you can find a high-level overview of the Pangeo Forge project, its subprojects, how they fit together, and the road ahead.
 Pangeo Forge is a community driven project so please open [issues](https://github.com/pangeo-forge/roadmap/issues) to ask questions or to propose changes and/or additions to the roadmap itself.
 Pangeo Forge has grown out of the [Pangeo Project](http://pangeo.io/), an open-source community promoting open, reproducible, and scalable science. 
 
@@ -17,7 +17,7 @@ By automating the difficult parts of package creation, Conda Forge has enabled t
 
 ## Vision
 
-Pangeo Forge aspires to be like Conda Forge, but for data — specifically, for Analysis Ready, Cloud Optimized (ARCO) data. For a detailed working definiton of ARCO data, see our paper [Cloud Native Repositories for Big Scientific Data](https://ieeexplore.ieee.org/abstract/document/9354557).
+Pangeo Forge aspires to be like Conda Forge, but for data — specifically, for Analysis Ready, Cloud Optimized (ARCO) data. For a detailed working definition of ARCO data, see our paper [Cloud Native Repositories for Big Scientific Data](https://ieeexplore.ieee.org/abstract/document/9354557).
 
 We envision a vibrant, dynamic library of open-access ARCO data stored in public clouds, shared among thousands of scientists and directly accessible to data-proximate computing.
 
@@ -79,13 +79,13 @@ Pangeo Forge is a community-driven project with lots of work to do and lots of r
 * Pressure test and release the pyspark beam runner through testing existing and new recipes, such as MUR SST kerchunk, CMIP6 and GPM IMERG. Documentation will provide instructions on how to deploy and use the pyspark beam runner.
 * A pyspark beam runner will be cloud agnostic but we anticipate maintaining a stable deployment on one cloud provider in the short term.
 
-### Documention + Governance
+### Documentation + Governance
 
 * [Documentation](https://pangeo-forge.readthedocs.io) will be updated to reflect changes, such as the migration from per-recipe feedstocks for deployment on a single centralized runner (formerly known as a bakery) to decentralized recipe actions and execution environments.
-* Move recipes out of staged-recipes or forked repos into their own repos
-* Archive feedstocks in the pangeo-forge organization
-* Create a template for recipe development
-* Migrate pangeo-forge jam sessions to a shared calendar
+* Move recipes out of staged-recipes or forked repos into their own repos.
+* Archive feedstocks in the pangeo-forge organization.
+* Create a template for recipe development.
+* Migrate pangeo-forge jam sessions to a shared calendar.
 
 ------
 
